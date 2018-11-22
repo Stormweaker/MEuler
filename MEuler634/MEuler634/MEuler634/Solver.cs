@@ -11,12 +11,23 @@ namespace MEuler634
         /// </summary>
         /// <param name="n"></param>
         /// <returns>Solution of the problem</returns>
-        public static Solution BruteForce(long n)
+        public static Solution BruteForce(double n)
         {
             Solution sol = new Solution();
 
-            sol.AddDecomposition(0, 0);
+            double a = 2;
+            double b = 2;
 
+            for (; Math.Pow(a, 2) * Math.Pow(b, 3) <= n; a++)
+            {
+                for(; Math.Pow(a, 2) * Math.Pow(b, 3) <= n; b++)
+                {
+                    sol.AddDecomposition(a, b);
+                }
+
+                b = 2;
+            }
+            
             return sol;
         }
     }
@@ -27,18 +38,18 @@ namespace MEuler634
     public class Solution
     {
         public int NumberOfSolutions { get; private set; }
-        public List<long> DecA;
-        public List<long> DecB;
+        public List<double> DecA;
+        public List<double> DecB;
 
         public Solution()
         {
-            DecA = new List<long>();
-            DecB = new List<long>();
+            DecA = new List<double>();
+            DecB = new List<double>();
 
             NumberOfSolutions = 0;
         }
 
-        public void AddDecomposition(long a, long b)
+        public void AddDecomposition(double a, double b)
         {
             DecA.Add(a);
             DecB.Add(b);

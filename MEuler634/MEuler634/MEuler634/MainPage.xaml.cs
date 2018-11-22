@@ -16,7 +16,7 @@ namespace MEuler634
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            long n = Convert.ToInt64(TextInput.Text);
+            double n = Convert.ToDouble(TextInput.Text);
 
             Solution sol = Solver.BruteForce(n);
 
