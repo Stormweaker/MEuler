@@ -38,23 +38,30 @@ namespace MEuler634
     public class Solution
     {
         public int NumberOfSolutions { get; private set; }
-        public List<double> DecA;
-        public List<double> DecB;
+        public List<double> ListA;
+        public List<double> ListB;
+        public List<double> ListX;
 
         public Solution()
         {
-            DecA = new List<double>();
-            DecB = new List<double>();
+            ListA = new List<double>();
+            ListB = new List<double>();
+            ListX = new List<double>();
 
             NumberOfSolutions = 0;
         }
 
         public void AddDecomposition(double a, double b)
         {
-            DecA.Add(a);
-            DecB.Add(b);
+            if (!ListX.Contains(Math.Pow(a, 2) * Math.Pow(b, 3)))
+            {
+                ListA.Add(a);
+                ListB.Add(b);
+                ListX.Add(Math.Pow(a, 2) * Math.Pow(b, 3));
 
-            NumberOfSolutions++;
+                NumberOfSolutions++;
+
+            }
         }
     }
 }

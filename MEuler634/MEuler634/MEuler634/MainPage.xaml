@@ -15,9 +15,11 @@
         
         <Button Text="Brute force" 
             Clicked="Button_Clicked" />
-        
+
         <Label x:Name="labelSolutionNumber"
                HorizontalOptions="CenterAndExpand"/>
+
+        <ListView x:Name="listViewDecompositions"></ListView>
 
     </StackLayout>
 

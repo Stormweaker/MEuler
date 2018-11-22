@@ -20,7 +20,14 @@ namespace MEuler634
 
             Solution sol = Solver.BruteForce(n);
 
-            labelSolutionNumber.Text = sol.NumberOfSolutions.ToString();
+            labelSolutionNumber.Text = $"F(n) = {sol.NumberOfSolutions.ToString()}";
+
+            List<string> listDecompositions = new List<string>();
+
+            for (int i = 0; i < sol.ListA.Count; i++)
+                listDecompositions.Add($"{sol.ListA[i]}^2 x {sol.ListB[i]}^3 = {sol.ListX[i]}");
+
+            listViewDecompositions.ItemsSource = listDecompositions.ToArray();
         }
     }
 }
