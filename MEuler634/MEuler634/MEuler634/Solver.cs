@@ -15,7 +15,7 @@ namespace MEuler634
         {
             Solution sol = new Solution();
 
-
+            sol.AddDecomposition(0, 0);
 
             return sol;
         }

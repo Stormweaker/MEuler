@@ -13,5 +13,14 @@ namespace MEuler634
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            long n = Convert.ToInt64(TextInput.Text);
+
+            Solution sol = Solver.BruteForce(n);
+
+            labelSolutionNumber.Text = sol.NumberOfSolutions.ToString();
+        }
     }
 }

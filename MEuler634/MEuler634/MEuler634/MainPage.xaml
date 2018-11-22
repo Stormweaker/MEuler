@@ -6,9 +6,19 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="Euler Project 634 Solver" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="Start" />
+        
+        <Editor x:Name="TextInput" 
+            HorizontalOptions="FillAndExpand"/>
+        
+        <Button Text="Brute force" 
+            Clicked="Button_Clicked" />
+        
+        <Label x:Name="labelSolutionNumber"
+               HorizontalOptions="CenterAndExpand"/>
+
     </StackLayout>
 
 </ContentPage>
