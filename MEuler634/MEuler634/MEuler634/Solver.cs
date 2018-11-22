@@ -13,8 +13,11 @@ namespace MEuler634
         /// <returns>Solution of the problem</returns>
         public static Solution BruteForce(long n)
         {
+            Solution sol = new Solution();
 
-            return null;
+
+
+            return sol;
         }
     }
 
@@ -24,15 +27,23 @@ namespace MEuler634
     public class Solution
     {
         public int NumberOfSolutions { get; private set; }
-        public List<long> a;
-        public List<long> b;
+        public List<long> DecA;
+        public List<long> DecB;
 
         public Solution()
         {
-            a = new List<long>();
-            b = new List<long>();
+            DecA = new List<long>();
+            DecB = new List<long>();
 
             NumberOfSolutions = 0;
+        }
+
+        public void AddDecomposition(long a, long b)
+        {
+            DecA.Add(a);
+            DecB.Add(b);
+
+            NumberOfSolutions++;
         }
     }
 }
